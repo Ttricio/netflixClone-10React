@@ -1,0 +1,32 @@
+.wrapper{
+position: absolute;
+top: 25px;
+left: 0;
+
+.container {
+	width: 100vw;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: transparent;
+	position: relative;
+	.logo__container {
+		height: 40px;
+		margin-left: 50px;
+		img {
+			height: 100%;
+		}
+	}
+	button {
+		margin-right: 50px;
+		color: white;
+		background-color: red;
+		border: none;
+		border-radius: 4px;
+		padding: 8px 15px;
+		position: absolute;
+		top: 15px;
+		right: 0;
+	}
+}
+}
