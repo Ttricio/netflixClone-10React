@@ -13,6 +13,10 @@ left: 0;
 	.logo__container {
 		height: 40px;
 		margin-left: 50px;
+		@media (min-width: 1024px) {
+			height: 70px;
+			
+		}
 		img {
 			height: 100%;
 		}
@@ -27,6 +31,11 @@ left: 0;
 		position: absolute;
 		top: 15px;
 		right: 0;
+		font-family: Arial, Helvetica, sans-serif;
+		@media (min-width: 1024px) {
+			height: 70px;
+			font-size: 30px;
+		}
 	}
 }
 }

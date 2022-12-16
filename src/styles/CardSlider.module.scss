@@ -8,6 +8,9 @@
 	background-color: black;
     overflow-x: hidden;
     height: 300px;
+    @media (min-width: 2000px) {
+		height: 400px;
+	}
     
     .container::-webkit-scrollbar{
         display: none;

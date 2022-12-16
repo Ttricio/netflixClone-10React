@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useDispatch } from "react";
 import BackgroundImage from "../components/BackgroundImage";
 import Header from "../components/Header";
 import classes from "../styles/SignUp.module.scss";
@@ -8,28 +8,39 @@ import {
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
+import { login } from "../Redux/features/userSlice";
 
 const SignUp = (props) => {
 	const [showPassword, setShowPassword] = useState(false);
-	const [formValues, setFormValues] = useState({
-		email: "",
-		password: "",
-	});
+	const [email, setEmail] = useState();
+	const [password, setPassword] = useState();
+	// const dispatch = useDispatch()
+	const submitHandler = async (e) => {
+		e.preventDefault();
+		try {
+		} catch (err) {
+			console.log(err);
+		}
+	};
 	const navigate = useNavigate();
+
 	const signInHandler = async () => {
 		try {
-			const { email, password } = formValues;
 			console.log(email);
 			console.log(`----------------------------------`);
 			console.log(password);
 
 			await createUserWithEmailAndPassword(auth, email, password);
+			// await dispatch(login())
 		} catch (error) {
 			const errorCode = error.code;
 			const errorMessage = error.message;
-			console.log(errorCode, errorMessage);
+			if (password.length < 6)
+				return alert(
+					`Your password is too short. Should have minimum 6 characters`
+				);
+			else if (password.length < 1) return alert(`Please enter a password`);
 		}
-		console.log(formValues);
 	};
 	onAuthStateChanged(auth, (currentUser) => {
 		if (currentUser) navigate("/");
@@ -48,19 +59,14 @@ const SignUp = (props) => {
 						Readt to watch? Enter your emal to create ar restart your membership
 					</h3>
 				</div>
-				<form className={classes.inputs__container}>
+				<form className={classes.inputs__container} onSubmit={submitHandler}>
 					<div className={classes.email__container}>
 						<input
 							type='email'
 							placeholder='Email adress'
 							name='email'
-							value={formValues.email}
-							onChange={(e) =>
-								setFormValues({
-									...formValues,
-									[e.target.name]: [e.target.value],
-								})
-							}
+							value={email}
+							onChange={(e) => setEmail(e.target.value)}
 						/>
 						{!showPassword ? (
 							<button onClick={() => setShowPassword(true)}>Get Started</button>
@@ -68,18 +74,13 @@ const SignUp = (props) => {
 					</div>
 					{showPassword && (
 						<>
-							<label htmlFor='email'>Please enter your password</label>
+							<label htmlFor='email'></label>
 							<input
 								type='password'
 								placeholder='Password'
 								name='password'
-								value={formValues.password}
-								onChange={(e) =>
-									setFormValues({
-										...formValues,
-										[e.target.name]: [e.target.value],
-									})
-								}
+								value={password}
+								onChange={(e) => setPassword(e.target.value)}
 							/>
 						</>
 					)}

@@ -7,21 +7,16 @@ const initialState = {
 	genres: [],
 };
 
-
 const URL = "https://api.themoviedb.org";
-
-
 
 
 export const getPopular = createAsyncThunk(
 	"movies/trending",
 	async ({ type, period }) => {
 		try {
-			const resp =
-				
-				await axios.get(
-					`${URL}/3/trending/${type}/${period}?api_key=${process.env.REACT_APP_API_KEY}`
-				);
+			const resp = await axios.get(
+				`${URL}/3/trending/${type}/${period}?api_key=${process.env.REACT_APP_API_KEY}`
+			);
 			console.log(resp, `popular from redux slice`);
 			return resp.data.results;
 		} catch (err) {
@@ -29,15 +24,21 @@ export const getPopular = createAsyncThunk(
 		}
 	}
 );
-export const getGenres = createAsyncThunk("netflix/genres", async () => {
-	const {
-		data: { genres },
-	} = await axios.get(
-		` ${URL}/3/genre/movie/list?api_key==${process.env.REACT_APP_API_KEY}`
-	);
-	console.log(genres);
-	return genres;
+export const getGenres = createAsyncThunk("movies/genres", async () => {
+	try {
+		const  { data: {
+			genres
+		}} = await axios.get(
+			` ${URL}/3/genre/movie/list?api_key=${process.env.REACT_APP_API_KEY}`
+		);
+		console.log(genres, `this becomes form redux`);
+		return genres;
+	} catch (err) {
+		console.log(err);
+	}
 });
+
+
 
 const moviesSlice = createSlice({
 	name: "movies",
@@ -51,6 +52,7 @@ const moviesSlice = createSlice({
 			state.genres = action.payload;
 			state.genresLoaded = true;
 		});
+		
 	},
 });
 

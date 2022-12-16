@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 const Player = () => {
     const back =()=>{
         navigate(-1)
-        console.log(`is working`);
+        
     }
 	const navigate = useNavigate();
 	return (

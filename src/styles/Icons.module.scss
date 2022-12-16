@@ -1,7 +1,15 @@
-.svg {
-	width: 20px;
-	height: 20px;
+.search {
+	
+	height: 25px;
+	width: 25px;
 	color: white;
+	@media (min-width: 2000px) {
+		height: 50px;
+		width:50px;	
+		
+		
+	}
+	
 }
 
 .chevron__down {
@@ -27,7 +35,8 @@
 	margin-right: 10px;
 }
 .leftslide,
-.rightslide {
+.rightslide, 
+.close {
 	color: white;
 	width: 30px;
 	height: 30px;

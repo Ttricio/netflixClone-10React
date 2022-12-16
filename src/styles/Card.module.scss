@@ -2,6 +2,10 @@
 	min-width: 230px;
 	width: 230px;
 	height: 100%;
+	@media (min-width: 2000px) {
+		min-width: 330px;
+	width: 30px;
+	}
 
 	cursor: pointer;
 	position: relative;
@@ -21,8 +25,12 @@
 		border-radius: 0.3rem;
 		box-shadow: rgba(0, 0, 0, 0.75) 0px 3px 10px;
 		background-color: #181818;
-		transition: 0.3s ease-in-out;
-		z-index: 99;
+		transition: 0.3s ease-in-out;		
+		@media (min-width: 2000px) {
+			
+			
+		width: 30rem;
+		}
 	}
 	.image__container {
 		position: relative;
@@ -51,6 +59,11 @@
 		gap: 0.5rem;
 
 		h2 {
+			@media (min-width: 2000px) {
+			
+			
+				font-size: 30px;
+				}
 		}
 		.info__container__title {
 			color: white;
@@ -68,6 +81,12 @@
 				span {
 					width: 25px;
 					height: 25px;
+					@media (min-width: 2000px) {
+			
+						width: 35px;
+						height: 35px;
+						
+						}
 				}
 			}
 			.more__info {
@@ -89,5 +108,12 @@
 				}
 			}
 		}
+	}
+	.detsils{
+		z-index:300;
+		width: 80%;
+		height: 90%;
+		margin-left: auto;
+		margin-right: auto;
 	}
 }
