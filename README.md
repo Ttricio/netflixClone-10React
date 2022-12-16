@@ -1,4 +1,6 @@
 [LIVE DEMO](https://beamish-gaufre-32d4ab.netlify.app)
+![image](https://user-images.githubusercontent.com/113437980/208088524-7899ce87-8086-42c0-9ce9-aebad90f226b.png)
+
 
 # Getting Started with Create React App
 
