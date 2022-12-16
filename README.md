@@ -1,8 +1,4 @@
 [LIVE DEMO](https://beamish-gaufre-32d4ab.netlify.app)
-![image](https://user-images.githubusercontent.com/113437980/208088524-7899ce87-8086-42c0-9ce9-aebad90f226b.png)
-
-
-
 https://user-images.githubusercontent.com/113437980/208098085-6fdf4a80-40e4-44df-a089-d63dbe701bc4.mp4
 
 
