@@ -1,4 +1,4 @@
->>>>>>>>>>>>>>>>>[LIVE DEMO](https://beamish-gaufre-32d4ab.netlify.app)<<<<<<<<<<<<<<<<<<<<
+[LIVE DEMO](https://beamish-gaufre-32d4ab.netlify.app)
 
 # Getting Started with Create React App
 
